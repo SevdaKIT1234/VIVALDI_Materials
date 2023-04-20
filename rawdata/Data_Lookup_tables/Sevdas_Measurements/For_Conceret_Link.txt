@@ -1,0 +1,15 @@
+K:\Students\B.Sc\Jacqueline_Lim\Second_Topic\Thesis\Final_Documents\Radar Reflectivity and Scattering Measurement of Traffic Objects\Graphs\S_Parameter_FixedAngle_Norm\Concrete
+
+
+_________________________________________
+
+Comments for fitting functions: 
+
+A=[-38.665	-42.227	-41.765	-49.13	-35.067	-35.401	-44.123	-27.759	-15.149	-21.913	-31.92	-46.343	-32.29	-38.018	-42.605	-53.459	-40.089	-43.531	-55.623
+]';
+B=[-90	-80	-70	-60	-50	-40	-30	-20	-10	0	10	20	30	40	50	60	70	80	90]';
+F = polyfit(B,A,9);
+ XX=[-90:5:90]';
+y1 = polyval(F,XX);
+plot(XX,y1+8)
+Y=y1+8; 

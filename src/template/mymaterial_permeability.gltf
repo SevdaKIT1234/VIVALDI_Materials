@@ -1,0 +1,43 @@
+{
+    "asset": {
+        "copyright": "(C) 2023, copy-right-owner",
+        "generator": "hand-made",
+        "version": "1.0",
+        "extensions": {
+            "OpenMaterial_asset_info": {
+                "asset_type": "material_permeability",
+                "id": "<insert uuid4 created with https://www.uuidgenerator.net/version4 here>",
+                "title": "Relative permeability of mymaterial",
+                "asset_version": "1",
+                "asset_variation": "1",
+                "creator": "copy-right owner or other entity",
+                "description": "Relative permeability of mymaterial",
+                "creation_date": "2023.01.01. 12:00:00",
+                "sources": [
+                    "http://www.mymaterial.com"
+                ],
+                "comment": "Relative permeability mymaterial; data obtained by/from ... using method ..."
+            }
+        }
+    },
+    "extensions": {
+        "OpenMaterial_permeability_data": {
+            "data": [
+                {
+                    "temperature": 280.0,
+                    "humidity": -1.0,
+                    "incident_angle": 0.78,		
+                    "permeability": [
+                        [3.89341e-03, 4.5],
+                        [3.89342e-03, 4.4],
+                        [3.89343e-03, 4.6]						
+                    ]
+                }
+            ]
+        }
+    },
+    "extensionsUsed": [
+        "OpenMaterial_asset_info",
+        "OpenMaterial_permeability_data"
+    ]
+}
