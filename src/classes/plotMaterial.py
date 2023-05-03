@@ -7,6 +7,7 @@ Plot the diffrent data sets.
 
 import json as j
 import os
+import matplotlib.pyplot as plt
 
 __author__ = "Sandro Reith"
 __project__ = "VIVALDI"
