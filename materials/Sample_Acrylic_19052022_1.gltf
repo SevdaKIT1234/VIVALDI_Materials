@@ -9,8 +9,8 @@
                 "creation_date": null,
                 "creator": "Karlsruhe Institute of Technology and Continental AG",
                 "description": "common road surface asphalt",
-                "id": "0815",
-                "title": "material_Asphalt_58421AC8DS"
+                "id": "3a0a38e9-86a1-463a-a389-4c87bae599ea",
+                "title": "material_Sample_Acrylic_19052022_1"
             }
         },
         "generator": "VIVALDI OpenMaterial Python Script",
@@ -61,7 +61,7 @@
                         "particle_density": -1.0,
                         "refractive_index_uri": "",
                         "relative_permeability_uri": "",
-                        "relative_permittivity_uri": "data\\Asphalt_58421AC8DS_permittivity.gltf",
+                        "relative_permittivity_uri": "data\\Sample_Acrylic_19052022_1_permittivity.gltf",
                         "shear_velocity": -1.0
                     },
                     "user_preferences": {
@@ -101,7 +101,7 @@
                     }
                 }
             },
-            "name": "Asphalt_58421AC8DS"
+            "name": "Sample_Acrylic_19052022_1"
         }
     ]
 }

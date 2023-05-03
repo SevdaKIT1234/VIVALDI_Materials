@@ -17,7 +17,7 @@ __maintainer__ = "Sandro Reith"
 __email__ = "sandro.reith@continental.com"
 __status__ = "Production"
 
-class OpenMaterialTemplate():
+class open_material_template():
     """load the OpenMaterial template
     """
     def __init__(self):
@@ -29,10 +29,10 @@ class OpenMaterialTemplate():
         self.material_params = {}
         self.permeability = {}
         self.permittivity = {}
-        self.loadTemplates()
+        self.load_templates()
         print("The initialization for Openmaterial Template is complete")
 
-    def loadTemplates(self):
+    def load_templates(self):
         """load the templates from template folder
         """
         if os.path.isdir(self.templateDir):
@@ -52,14 +52,14 @@ class OpenMaterialTemplate():
         else:
             print("EROOR::template folder is not available ", self.templateDir)
 
-        def  getPermeabilityTemplate(self):
+        def  get_permeability_template(self):
             return self.permeability
 
-        def  getPermittivityTemplate(self):
+        def  get_permittivity_template(self):
             return self.permittivity
 
-        def  getMaterialTemplate(self):
+        def  get_material_template(self):
             return self.material_params
 
 if __name__ == "__main__":
-    obj = OpenMaterialTemplate()
+    obj = open_material_template()

@@ -1,0 +1,17 @@
+material uuid
+PTFE_test 066794f3-975e-456c-9bc3-529197e95856
+Sample_3D_Radome_Material_No5_19052022_1 066794f3-975e-456c-9bc3-529197e95856
+Sample_Acrylic_19052022_1 3a0a38e9-86a1-463a-a389-4c87bae599ea
+Sample_Asphalt_58421130CI_19052022_1 d17f48fb-06fd-4cee-b4aa-217ad7054aad
+Sample_Asphalt_58421130CI_19052022_2 a3b4fea9-ed26-4c66-b2fa-d3b8e9e41b1d
+Sample_Asphalt_58421AC8DS_19052022_1 40096029-9ff9-4bd5-8153-d19eceaba931
+Sample_Asphalt_LPD1421LV_19052022_1 88058ec7-5f4f-4797-8720-34be52133720
+Sample_Asphalt_LPD1421LV_19052022_2 6d9ba7e4-555c-493a-bd82-47c7916d2d58
+Sample_Concrete_19052022_1 18b59488-7679-443c-ae70-e1bed4ad1f57
+Sample_Concrete_19052022_2_2 2540a2fd-b9d6-4831-827a-5f34b449c01f
+Sample_Concrete_19052022_2_3 8a860547-96ba-4def-bfd0-be1ef1b64983
+Sample_Concrete_19052022_2 e9189a0d-f88b-4864-838b-7769914de2b6
+Sample_wheel_rubber_1 5e4ffd43-e5bc-45b5-b8e8-7ae32d2cf54e
+Sample_wheel_rubber_2 0068f3f4-d528-480d-94c8-20250d3ea10d
+Sample_wheel_rubber e441d90e-dc8a-46ea-99c8-a3240b403fc0
+Sample_Wood_19052022_1 c7f78f9f-cd0b-4ed7-86ec-1eff8251e694

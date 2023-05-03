@@ -18,7 +18,7 @@ __maintainer__ = "Sandro Reith"
 __email__ = "sandro.reith@continental.com"
 __status__ = "Production"
 
-class checkValidJson():
+class CheckValidJson():
     """check if the generated json files following the schema of the OpenMaterial design
     """
     def __init__(self):
@@ -30,7 +30,8 @@ class checkValidJson():
         self.schema_material_params = {}
         self.schema_permeability = {}
         self.schema_permittivity = {}
-    
+        print("The initialization for CheckValidJson is complete")
+
     def getSchema(self, file):
         """This function loads the given schema available"""
         with open(file, 'r', encoding="utf8") as file:
@@ -56,7 +57,7 @@ class checkValidJson():
         else:
             print("EROOR::schema folder is not available ", self.schemaDir)
             
-    def validateJsonViaSchema(schema, jsonData):
+    def validateJsonViaSchema(self, schema, jsonData):
         try:
             validate(instance=jsonData, schema=schema)
         except schema.exceptions.ValidationError as err:
@@ -64,5 +65,5 @@ class checkValidJson():
         return True
             
 if __name__ == "__main__":
-    val = checkValidJson()
+    val = CheckValidJson()
     val.loadTemplates()
