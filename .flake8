@@ -1,0 +1,11 @@
+[flake8]
+ignore = E501, E402, W503, E712, C901, E203, F821, E711, D105, D203, D213
+max-line-length = 120
+max-complexity = 10
+select = B,C,E,F,W,T4,B9,D
+exclude =
+    .nox,
+    build,
+    docs,
+    docs_src
+
