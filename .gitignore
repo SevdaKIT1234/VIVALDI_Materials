@@ -36,6 +36,7 @@ __pycache__/
 
 # setup
 setup/v_openmaterial/
+setup/v_dev_openmaterial/
 
 # data container
 *.zip
