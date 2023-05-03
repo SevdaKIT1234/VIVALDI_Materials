@@ -1,4 +1,5 @@
-"""
+"""checkFiles.py.
+
 Main script for converting KIT research and measurements into the OpenMaterial conform format.
 This code is part of the VIVALDI public funded project.
 
@@ -6,8 +7,9 @@ Check if the generated files are valid and follwong the OpenMaterial standard.
 """
 
 import json as j
-from jsonschema import validate
 import os
+
+from jsonschema import validate
 
 __author__ = "Sandro Reith"
 __project__ = "VIVALDI"
@@ -18,10 +20,12 @@ __maintainer__ = "Sandro Reith"
 __email__ = "sandro.reith@continental.com"
 __status__ = "Production"
 
-class CheckValidJson():
-    """check if the generated json files following the schema of the OpenMaterial design
-    """
+
+class CheckValidJson:
+    """check if the generated json files following the schema of the OpenMaterial design."""
+
     def __init__(self):
+        """Init class."""
         print("init")
         self.absolute_path = os.path.dirname(__file__)
         relative_path = "..\\template"
@@ -30,17 +34,15 @@ class CheckValidJson():
         self.schema_material_params = {}
         self.schema_permeability = {}
         self.schema_permittivity = {}
-        print("The initialization for CheckValidJson is complete")
 
     def getSchema(self, file):
-        """This function loads the given schema available"""
-        with open(file, 'r', encoding="utf8") as file:
+        """Load the given schema available."""
+        with open(file, "r", encoding="utf8") as file:
             schema = j.load(file)
         return schema
 
     def loadTemplates(self):
-        """load the schames from template folder
-        """
+        """Load the schames from template folder."""
         if os.path.isdir(self.schemaDir):
             filenames = next(os.walk(self.schemaDir), (None, None, []))[2]  # [] if no file
             for file in filenames:
@@ -58,11 +60,22 @@ class CheckValidJson():
             print("EROOR::schema folder is not available ", self.schemaDir)
 
     def validateJsonViaSchema(self, schema, jsonData):
+        """Check if json following the defined schema.
+
+        Args:
+            schema (_type_): target schema
+            jsonData (_type_): json file for validation
+
+        Returns:
+            _type_: true if validated, otherwise false
+        """
         try:
             validate(instance=jsonData, schema=schema)
         except schema.exceptions.ValidationError as err:
+            print(err)
             return False
         return True
+
 
 if __name__ == "__main__":
     val = CheckValidJson()
