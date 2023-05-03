@@ -56,14 +56,14 @@ class CheckValidJson():
                     print("Not used: ", file)
         else:
             print("EROOR::schema folder is not available ", self.schemaDir)
-            
+
     def validateJsonViaSchema(self, schema, jsonData):
         try:
             validate(instance=jsonData, schema=schema)
         except schema.exceptions.ValidationError as err:
             return False
         return True
-            
+
 if __name__ == "__main__":
     val = CheckValidJson()
     val.loadTemplates()
