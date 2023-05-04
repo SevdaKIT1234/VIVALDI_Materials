@@ -32,7 +32,7 @@ class raw_data_reader:
         self.uuid = pd.DataFrame(columns=["material", "uuid"])
         self.Thickness = []
         self.RawPath = r"rawdata"
-        self.TransfetPath = r"Transfering_Conti"
+        self.TransfetPath = r"meas"
         self.read_raw_over_angle()
         self.read_raw_data_eps()
         self.read_uuid()
@@ -41,7 +41,7 @@ class raw_data_reader:
 
     def read_uuid(self):
         """ID uuid for every material name generated in advance by https://www.uuidgenerator.net/version4."""
-        my_uuids = os.path.join(self.basePath, self.RawPath, "Data_Lookup_tables", "list_uuid.txt")
+        my_uuids = os.path.join(self.basePath, self.RawPath, "list_uuid.txt")
         self.uuid = pd.read_csv(my_uuids, sep=" ")
         print("Loaded uuids")
 
@@ -63,7 +63,7 @@ class raw_data_reader:
         """Read permittivity from file."""
         # myRawPath=os.path.join(self.basePath, self.RawPath, "Data_Lookup_tables","SWISSto12 MCK", "data_20220519","Sample_Asphalt_58421AC8DS_19052022_1_eps.txt")
         datasets = []
-        myRawPath = os.path.join(self.basePath, self.RawPath, "Data_Lookup_tables", "SWISSto12 MCK", "data_20220519")
+        myRawPath = os.path.join(self.basePath, self.RawPath, "data_20220519")
         for fileRaw in os.listdir(myRawPath):
             if fileRaw.endswith(".txt"):
                 fullFileRaw = os.path.join(myRawPath, fileRaw)

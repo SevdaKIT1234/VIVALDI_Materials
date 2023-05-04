@@ -26,7 +26,7 @@ class open_material_template:
         """Init class."""
         self.absolute_path = os.path.dirname(__file__)
         relative_path = "..\\template"
-        self.templateDir = os.path.join(self.absolute_path, relative_path)
+        self.template_dir = os.path.join(self.absolute_path, relative_path)
         self.material_params = {}
         self.permeability = {}
         self.permittivity = {}
@@ -34,22 +34,22 @@ class open_material_template:
 
     def load_templates(self):
         """Load the templates from template folder."""
-        if os.path.isdir(self.templateDir):
-            filenames = next(os.walk(self.templateDir), (None, None, []))[2]  # [] if no file
+        if os.path.isdir(self.template_dir):
+            filenames = next(os.walk(self.template_dir), (None, None, []))[2]  # [] if no file
             for file in filenames:
                 if file.__contains__("mymaterial.gltf"):
-                    with open(os.path.join(self.templateDir, file), "r") as f:
+                    with open(os.path.join(self.template_dir, file), "r") as f:
                         self.material_params = j.load(f)
                 elif file.__contains__("permittivity.gltf"):
-                    with open(os.path.join(self.templateDir, file), "r") as f:
+                    with open(os.path.join(self.template_dir, file), "r") as f:
                         self.permittivity = j.load(f)
                 elif file.__contains__("permeability.gltf"):
-                    with open(os.path.join(self.templateDir, file), "r") as f:
+                    with open(os.path.join(self.template_dir, file), "r") as f:
                         self.permeability = j.load(f)
                 else:
                     print("Not used: ", file)
         else:
-            print("EROOR::template folder is not available ", self.templateDir)
+            print("EROOR::template folder is not available ", self.template_dir)
 
         def get_permeability_template(self):
             return self.permeability

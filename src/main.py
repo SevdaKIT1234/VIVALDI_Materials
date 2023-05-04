@@ -9,7 +9,7 @@ import json
 import os
 from datetime import datetime
 
-from classes.checkFiles import CheckValidJson as ValidateJson
+from classes.checkFiles import check_validation_json as ValidateJson
 from classes.readerTemplate import open_material_template as Template
 from classes.readRawData import raw_data_reader as RawData
 
@@ -37,15 +37,15 @@ class open_material_data_set(Template, RawData):
         super()
 
         material.absolute_path = os.path.dirname(__file__)
-        relativePathMaterials = "..\\materials"
-        material.materialsDir = os.path.join(material.absolute_path, relativePathMaterials)
+        relative_path_material = "..\\materials"
+        material.materials_dir = os.path.join(material.absolute_path, relative_path_material)
         material.startTime = datetime.now().strftime("%Y.%m.%d %H:%M:%S")
 
         material.material_params = {}
         material.permeability = {}
         material.permittivity = {}
-        material.Template = Template()
-        material.rawData = RawData()
+        material.template = Template()
+        material.raw_data = RawData()
         material.schema = ValidateJson()
 
         material.init_struct_from_template()
@@ -56,7 +56,7 @@ class open_material_data_set(Template, RawData):
         Returns:
             _type_: list
         """
-        return self.rawData.MaterialName
+        return self.raw_data.MaterialName
 
     def fill_json(self, name):
         """Call all filler functions.
@@ -69,9 +69,9 @@ class open_material_data_set(Template, RawData):
 
     def init_struct_from_template(self):
         """Generate OpenMaterial Struct from Class."""
-        self.set_material_json(self.Template.material_params)
-        self.set_permittivity_json(self.Template.permittivity)
-        self.set_permeability_json(self.Template.permeability)
+        self.set_material_json(self.template.material_params)
+        self.set_permittivity_json(self.template.permittivity)
+        self.set_permeability_json(self.template.permeability)
 
     def return_copyright(self):
         """Return fixed CopyRight.
@@ -110,7 +110,7 @@ class open_material_data_set(Template, RawData):
         Returns:
             _type_: uuid
         """
-        return self.rawData.uuid.loc[self.rawData.uuid["material"] == name]
+        return self.raw_data.uuid.loc[self.raw_data.uuid["material"] == name]
 
     def fill_material_json(self, name):
         """Add loaded raw data to material json."""
@@ -147,7 +147,7 @@ class open_material_data_set(Template, RawData):
         ] = os.path.join("data", "_".join([name, "permittivity.gltf"]))
         j_temp["materials"][0]["name"] = name
 
-        outfile_material_params_file = os.path.join(self.materialsDir, name + ".gltf")
+        outfile_material_params_file = os.path.join(self.materials_dir, name + ".gltf")
 
         # check if valid
         json_schema_checker = self.schema.validateJsonViaSchema(self.schema.schema_material_params, j_temp)
@@ -180,18 +180,19 @@ class open_material_data_set(Template, RawData):
         j_temp["asset"]["extensions"]["OpenMaterial_asset_info"]["sources"] = ""
 
         # data
+        j_temp["extensions"]["OpenMaterial_permittivity_data"]["data"][0]["incident_angle"] = 0.0
         for i in range(len(j_temp["extensions"]["OpenMaterial_permittivity_data"]["data"][0]["permittivity"])):
             j_temp["extensions"]["OpenMaterial_permittivity_data"]["data"][0]["permittivity"].pop()
 
-        # mat_name = [s for s in self.rawData.MaterialName if name in s]
-        # j_tmp = self.rawData.RawDataEps.loc[self.rawData.RawDataEps["material"] == mat_name[0]]
-        for index, row in self.rawData.RawDataEps.iterrows():
+        # mat_name = [s for s in self.raw_data.MaterialName if name in s]
+        # j_tmp = self.raw_data.RawDataEps.loc[self.raw_data.RawDataEps["material"] == mat_name[0]]
+        for index, row in self.raw_data.RawDataEps.iterrows():
             j_temp["extensions"]["OpenMaterial_permittivity_data"]["data"][0]["permittivity"].append(
                 [lightspeed / (row["!freq"] * 10e9), row["eps"], row["tand"]]
             )  # wavelength,eps
 
         filename = "_".join([name, "permittivity.gltf"])
-        outfile_permittivity_file = os.path.join(self.materialsDir, "data", filename)
+        outfile_permittivity_file = os.path.join(self.materials_dir, "data", filename)
 
         # check if valid
         json_schema_checker = self.schema.validateJsonViaSchema(self.schema.schema_material_params, j_temp)
@@ -237,4 +238,7 @@ if __name__ == "__main__":
     for material in materials:
         OpenMaterial.fill_json(material)
 
-    print("Templates loaded")
+    print("_________________________")
+    print("                         ")
+    print("     F I N I S H E D     ")
+    print("_________________________")

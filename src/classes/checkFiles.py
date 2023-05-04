@@ -21,7 +21,7 @@ __email__ = "sandro.reith@continental.com"
 __status__ = "Production"
 
 
-class CheckValidJson:
+class check_validation_json:
     """check if the generated json files following the schema of the OpenMaterial design."""
 
     def __init__(self):
@@ -78,5 +78,5 @@ class CheckValidJson:
 
 
 if __name__ == "__main__":
-    val = CheckValidJson()
+    val = check_validation_json()
     val.loadTemplates()
