@@ -1,0 +1,107 @@
+{
+    "asset": {
+        "copyright": "(C) 2023, Karlsruhe Institute of Technology",
+        "extensions": {
+            "OpenMaterial_asset_info": {
+                "asset_type": "material",
+                "asset_variation": "1",
+                "asset_version": "1",
+                "creation_date": null,
+                "creator": "Karlsruhe Institute of Technology and Continental AG",
+                "description": "common road surface asphalt",
+                "id": "e9189a0d-f88b-4864-838b-7769914de2b6",
+                "title": "material_Concrete_19052022_2"
+            }
+        },
+        "generator": "VIVALDI OpenMaterial Python Script",
+        "version": "1.0.0"
+    },
+    "extensionsUsed": [
+        "OpenMaterial_asset_info",
+        "OpenMaterial_material_parameters"
+    ],
+    "materials": [
+        {
+            "extensions": {
+                "OpenMaterial_material_parameters": {
+                    "physical_properties": {
+                        "acoustic_impedance": -1.0,
+                        "applicable_sensors": [
+                            "camera",
+                            "radar",
+                            "lidar"
+                        ],
+                        "conductivity_uri": "",
+                        "detection_wavelength_ranges": [
+                            {
+                                "max": 8e-07,
+                                "min": 3e-07,
+                                "typical_sensor": "camera"
+                            },
+                            {
+                                "max": 0.037,
+                                "min": 0.033,
+                                "typical_sensor": "radar"
+                            },
+                            {
+                                "max": 1.7e-06,
+                                "min": 2e-07,
+                                "typical_sensor": "lidar"
+                            },
+                            {
+                                "max": 0.017,
+                                "min": 0.00068,
+                                "typical_sensor": "ultrasound"
+                            }
+                        ],
+                        "effective_particle_area": -1.0,
+                        "emissive_coefficient_uri": "",
+                        "mean_free_path": -1.0,
+                        "particle_cross_section": -1.0,
+                        "particle_density": -1.0,
+                        "refractive_index_uri": "",
+                        "relative_permeability_uri": "",
+                        "relative_permittivity_uri": "data\\Concrete_19052022_2_permittivity.gltf",
+                        "shear_velocity": -1.0
+                    },
+                    "user_preferences": {
+                        "coating_materials": [
+                            {
+                                "layer_thickness": 0.0,
+                                "material_ref": ""
+                            }
+                        ],
+                        "geometrical_optics": true,
+                        "include_diffraction": false,
+                        "include_numerical_simulation": false,
+                        "ingredients": [
+                            {
+                                "material_ref": "",
+                                "order": ""
+                            }
+                        ],
+                        "lambert_emission": 0.0,
+                        "material_classification": "road_surface",
+                        "material_scheme": "surface",
+                        "material_type": {
+                            "homogeneous": false,
+                            "isotropic": true,
+                            "magnetic": false
+                        },
+                        "subsurface": {
+                            "subsurface": false,
+                            "subsurface_thickness": -1.0
+                        },
+                        "surface_displacement_uri": "",
+                        "surface_roughness": {
+                            "surface_correlation_length": 1.0,
+                            "surface_height_rms": 500
+                        },
+                        "temperature": 280.0
+                    }
+                }
+            },
+            "name": "Concrete_19052022_2"
+        }
+    ]
+}

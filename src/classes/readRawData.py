@@ -29,7 +29,7 @@ class raw_data_reader:
         self.basePath = os.getcwd()
         self.RawDataEps = pd.DataFrame()
         self.MaterialName = []
-        self.uuid = pd.DataFrame(columns=["material", "uuid"])
+        self.uuid = pd.DataFrame(columns=["material", "uuid_material", "uuid_permittivity"])
         self.Thickness = []
         self.RawPath = r"rawdata"
         self.TransfetPath = r"meas"
@@ -41,8 +41,8 @@ class raw_data_reader:
 
     def read_uuid(self):
         """ID uuid for every material name generated in advance by https://www.uuidgenerator.net/version4."""
-        my_uuids = os.path.join(self.basePath, self.RawPath, "list_uuid.txt")
-        self.uuid = pd.read_csv(my_uuids, sep=" ")
+        material_uuids = os.path.join(self.basePath, self.RawPath, "list_uuid.txt")
+        self.uuid = pd.read_csv(material_uuids, sep=" ")
         print("Loaded uuids")
 
     def read_raw_over_angle(self):

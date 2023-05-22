@@ -123,7 +123,7 @@ class open_material_data_set(Template, RawData):
         j_temp["asset"]["version"] = __version__
         j_temp["asset"]["extensions"]["OpenMaterial_asset_info"]
         j_temp["asset"]["extensions"]["OpenMaterial_asset_info"]["asset_type"] = "material"
-        j_temp["asset"]["extensions"]["OpenMaterial_asset_info"]["id"] = uuid["uuid"].item()
+        j_temp["asset"]["extensions"]["OpenMaterial_asset_info"]["id"] = uuid["uuid_material"].item()
         j_temp["asset"]["extensions"]["OpenMaterial_asset_info"]["title"] = "_".join(["material", name])
         j_temp["asset"]["extensions"]["OpenMaterial_asset_info"]["asset_version"] = "1"
         j_temp["asset"]["extensions"]["OpenMaterial_asset_info"]["asset_variation"] = "1"
@@ -168,7 +168,7 @@ class open_material_data_set(Template, RawData):
         j_temp["asset"]["version"] = __version__
         j_temp["asset"]["extensions"]["OpenMaterial_asset_info"]
         j_temp["asset"]["extensions"]["OpenMaterial_asset_info"]["asset_type"] = "material"
-        j_temp["asset"]["extensions"]["OpenMaterial_asset_info"]["id"] = uuid["uuid"].item()
+        j_temp["asset"]["extensions"]["OpenMaterial_asset_info"]["id"] = uuid["uuid_permittivity"].item()
         j_temp["asset"]["extensions"]["OpenMaterial_asset_info"]["title"] = " ".join(["Relative permittivity of", name])
         j_temp["asset"]["extensions"]["OpenMaterial_asset_info"]["asset_version"] = "1"
         j_temp["asset"]["extensions"]["OpenMaterial_asset_info"]["asset_variation"] = "1"
