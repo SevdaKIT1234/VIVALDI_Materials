@@ -26,11 +26,11 @@
                 {
                     "temperature": 280.0,
                     "humidity": -1.0,
-                    "incident_angle": 0.78,
+                    "incident_angle": 0.78,		
                     "permittivity": [
                         [3.89341e-03, 4.5],
                         [3.89342e-03, 4.4],
-                        [3.89343e-03, 4.6]
+                        [3.89343e-03, 4.6]						
                     ]
                 }
             ]
