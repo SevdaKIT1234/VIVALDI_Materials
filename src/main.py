@@ -179,16 +179,28 @@ class open_material_data_set(Template, RawData):
         j_temp["asset"]["extensions"]["OpenMaterial_asset_info"]["creation_date"] = self.return_time()
         j_temp["asset"]["extensions"]["OpenMaterial_asset_info"]["sources"] = ""
 
-        # data
+        # data real
         j_temp["extensions"]["OpenMaterial_permittivity_data"]["data"][0]["incident_angle"] = 0.0
-        for i in range(len(j_temp["extensions"]["OpenMaterial_permittivity_data"]["data"][0]["permittivity"])):
-            j_temp["extensions"]["OpenMaterial_permittivity_data"]["data"][0]["permittivity"].pop()
+        for i in range(len(j_temp["extensions"]["OpenMaterial_permittivity_data"]["data"][0]["real"])):
+            j_temp["extensions"]["OpenMaterial_permittivity_data"]["data"][0]["real"].pop()
 
         # mat_name = [s for s in self.raw_data.MaterialName if name in s]
         # j_tmp = self.raw_data.RawDataEps.loc[self.raw_data.RawDataEps["material"] == mat_name[0]]
         for index, row in self.raw_data.RawDataEps.iterrows():
-            j_temp["extensions"]["OpenMaterial_permittivity_data"]["data"][0]["permittivity"].append(
-                [lightspeed / (row["!freq"] * 10e9), row["eps"], row["tand"]]
+            j_temp["extensions"]["OpenMaterial_permittivity_data"]["data"][0]["real"].append(
+                [lightspeed / (row["!freq"] * 10e9), row["eps"]]
+            )  # wavelength,eps
+
+        # data imag
+        j_temp["extensions"]["OpenMaterial_permittivity_data"]["data"][0]["incident_angle"] = 0.0
+        for i in range(len(j_temp["extensions"]["OpenMaterial_permittivity_data"]["data"][0]["imag"])):
+            j_temp["extensions"]["OpenMaterial_permittivity_data"]["data"][0]["imag"].pop()
+
+        # mat_name = [s for s in self.raw_data.MaterialName if name in s]
+        # j_tmp = self.raw_data.RawDataEps.loc[self.raw_data.RawDataEps["material"] == mat_name[0]]
+        for index, row in self.raw_data.RawDataEps.iterrows():
+            j_temp["extensions"]["OpenMaterial_permittivity_data"]["data"][0]["imag"].append(
+                [lightspeed / (row["!freq"] * 10e9), row["tand"]]
             )  # wavelength,eps
 
         filename = "_".join([name, "permittivity.gltf"])
