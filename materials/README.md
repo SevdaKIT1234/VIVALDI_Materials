@@ -1,6 +1,6 @@
 # materials
 
-The result of the data processed according to the OpenMaterial format.
+The result of the data processed according to the OpenMATERIAL format.
 
 | Filepath  | Description |
 | ------------- | ------------- |
