@@ -5,7 +5,7 @@ This git repository contains the measured raw data and the generated OpenMATERIA
 The repo contains extensive measurements in the mmWave range.
 In the quasi-optical bench, various materials were measured with a vector analyser and the scattering  parameters were recorded.
 In addition, the complex permitivity $\epsilon_r$. 
-and permeability $\mu_r$ were calculated from the s-parameters, as these are the physical quantities that are most commonly used. As a small addition, only non-metallic or non-magnetic materials are used here, so the permeability can be assumed to be  $\mu_r = 0 \frac{H}{m}$ or $\mu_r = 1 - 0.00001j \frac{H}{m}$, which significantly simplifies the calculation of permittivity $\epsilon_r$.
+and permeability $\mu_r$ were calculated from the s-parameters, as these are the physical quantities that are most commonly used. As a small addition, only non-metallic or non-magnetic materials are used here, so the permeability can be assumed to be  $\mu_r = 1 \frac{H}{m}$ or $\mu_r = 1 - 0.00001j \frac{H}{m}$, which significantly simplifies the calculation of permittivity $\epsilon_r$.
 
 ## VIVALDI
 
