@@ -112,11 +112,12 @@ class raw_data_reader:
         self.RawDataAngle.groupby("Scanning Angle")
         Name = self.RawDataAngle.columns[1:-1]
         for name in Name:
-            plt.plot(self.RawDataAngle["Scanning Angle"], self.RawDataAngle[name])
-        plt.legend(Name)
-        plt.xlabel("Angle in Degree")
-        plt.ylabel("S21 in dB")
-        plt.title("Reflectivity Com at 78.5 GHz Scan angle=-90:90 Deg")
+            plt.plot(self.RawDataAngle["Scanning Angle"], self.RawDataAngle[name], linewidth=3)
+        plt.legend(Name, fancybox=True, framealpha=1, shadow=True, fontsize=12)
+        plt.xlabel("Angle in Degree", fontsize=14)
+        plt.ylabel("S21 in dB", fontsize=14)
+        plt.title("Reflectivity Com at 78.5 GHz Scan angle=-90:90 Deg", fontsize=20)
+        plt.grid(True)
         plt.show()
         print("Angle")
 
@@ -127,11 +128,12 @@ class raw_data_reader:
         Name = self.RawDataFreq.columns[1:-1]
         # Name = ['Asphalt (AC8DS)', 'Asphalt (PA8)', 'STL plate', 'Concrete', 'Wood','Radome']
         for name in Name:
-            plt.plot(self.RawDataFreq["Frequency"], self.RawDataFreq[name])
-        plt.legend(Name)
-        plt.xlabel("Frequency in GHz")
-        plt.ylabel("S21 in dB")
-        plt.title("Reflectivity Com at 76-81 GHz Scan angle=-10 Deg")
+            plt.plot(self.RawDataFreq["Frequency"], self.RawDataFreq[name], linewidth=3)
+        plt.legend(Name, fancybox=True, framealpha=1, shadow=True, fontsize=12)
+        plt.xlabel("Frequency in GHz", fontsize=14)
+        plt.ylabel("S21 in dB", fontsize=14)
+        plt.title("Reflectivity Com at 76-81 GHz Scan angle=-10 Deg", fontsize=20)
+        plt.grid(True)
         plt.show()
         print("Plot !")
 
