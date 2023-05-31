@@ -22,7 +22,7 @@ __maintainer__ = "Sandro Reith"
 __email__ = "sandro.reith@continental.com"
 __status__ = "Production"
 
-lightspeed = 2.998e8
+lightspeed = 299792458  # m/s
 
 
 class open_material_data_set(Template, RawData):
@@ -117,6 +117,16 @@ class open_material_data_set(Template, RawData):
         j_temp = copy.deepcopy(self.material_params)
         uuid = self.return_uuid(name)
 
+        mat_name = [s for s in self.raw_data.MaterialName if name in s]
+        wavelength_max = lightspeed / (
+            self.raw_data.RawDataEps.loc[self.raw_data.RawDataEps["material"] == mat_name[0]]["!freq"][0] * 1e9
+        )
+        max_indx = self.raw_data.RawDataEps.loc[self.raw_data.RawDataEps["material"] == mat_name[0]]["!freq"].size
+        wavelength_min = lightspeed / (
+            self.raw_data.RawDataEps.loc[self.raw_data.RawDataEps["material"] == mat_name[0]]["!freq"][max_indx - 1]
+            * 1e9
+        )
+
         # assets
         j_temp["asset"]["copyright"] = self.return_copyright()
         j_temp["asset"]["generator"] = self.return_generator()
@@ -135,10 +145,10 @@ class open_material_data_set(Template, RawData):
         # materials
         j_temp["materials"][0]["extensions"]["OpenMaterial_material_parameters"]["physical_properties"][
             "detection_wavelength_ranges"
-        ][1]["min"] = 0.033
+        ][1]["min"] = wavelength_min
         j_temp["materials"][0]["extensions"]["OpenMaterial_material_parameters"]["physical_properties"][
             "detection_wavelength_ranges"
-        ][1]["max"] = 0.037
+        ][1]["max"] = wavelength_max
         j_temp["materials"][0]["extensions"]["OpenMaterial_material_parameters"]["physical_properties"][
             "relative_permeability_uri"
         ] = ""  # os.path.join('data', '_'.join([name, 'permeability.gltf']))
@@ -162,6 +172,11 @@ class open_material_data_set(Template, RawData):
         """Add loaded raw data to permittivity json."""
         j_temp = copy.deepcopy(self.permittivity)
         uuid = self.return_uuid(name)
+
+        # get listed material
+        mat_name = [s for s in self.raw_data.MaterialName if name in s]
+        j_mat = self.raw_data.RawDataEps.loc[self.raw_data.RawDataEps["material"] == mat_name[0]]
+
         # assets
         j_temp["asset"]["copyright"] = self.return_copyright()
         j_temp["asset"]["generator"] = self.return_generator()
@@ -184,9 +199,7 @@ class open_material_data_set(Template, RawData):
         for i in range(len(j_temp["extensions"]["OpenMaterial_permittivity_data"]["data"][0]["real"])):
             j_temp["extensions"]["OpenMaterial_permittivity_data"]["data"][0]["real"].pop()
 
-        # mat_name = [s for s in self.raw_data.MaterialName if name in s]
-        # j_tmp = self.raw_data.RawDataEps.loc[self.raw_data.RawDataEps["material"] == mat_name[0]]
-        for index, row in self.raw_data.RawDataEps.iterrows():
+        for index, row in j_mat.iterrows():
             j_temp["extensions"]["OpenMaterial_permittivity_data"]["data"][0]["real"].append(
                 [lightspeed / (row["!freq"] * 10e9), row["eps"]]
             )  # wavelength,eps
@@ -198,9 +211,9 @@ class open_material_data_set(Template, RawData):
 
         # mat_name = [s for s in self.raw_data.MaterialName if name in s]
         # j_tmp = self.raw_data.RawDataEps.loc[self.raw_data.RawDataEps["material"] == mat_name[0]]
-        for index, row in self.raw_data.RawDataEps.iterrows():
+        for index, row in j_mat.iterrows():
             j_temp["extensions"]["OpenMaterial_permittivity_data"]["data"][0]["imag"].append(
-                [lightspeed / (row["!freq"] * 10e9), row["tand"]]
+                [lightspeed / (row["!freq"] * 1e9), row["tand"]]
             )  # wavelength,eps
 
         filename = "_".join([name, "permittivity.gltf"])

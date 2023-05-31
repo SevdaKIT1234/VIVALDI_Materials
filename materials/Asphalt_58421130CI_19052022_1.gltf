@@ -39,8 +39,8 @@
                                 "typical_sensor": "camera"
                             },
                             {
-                                "max": 0.037,
-                                "min": 0.033,
+                                "max": 0.003997232773333333,
+                                "min": 0.003331027311111111,
                                 "typical_sensor": "radar"
                             },
                             {
