@@ -30,7 +30,7 @@ The measurement results show the different reflection properties of the material
 
 ![Fig-1](setup/s21_over_a.svg "Fig 1")      |  ![Fig2](setup/s21_over_f.svg "Fig-2")
 :-------------------------:|:-------------------------:
-Fig 1: S21 over angle of incindet. | Fig 2: S21 over frequenz
+Fig 1: S21 over angle of incindet. | Fig 2: S21 over frequency
 
 
 ## File Structure
