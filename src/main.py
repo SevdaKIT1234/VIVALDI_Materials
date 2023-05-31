@@ -214,7 +214,7 @@ class open_material_data_set(Template, RawData):
         for index, row in j_mat.iterrows():
             j_temp["extensions"]["OpenMaterial_permittivity_data"]["data"][0]["imag"].append(
                 [lightspeed / (row["!freq"] * 1e9), row["tand"]]
-            )  # wavelength,eps
+            )  # wavelength,tand
 
         filename = "_".join([name, "permittivity.gltf"])
         outfile_permittivity_file = os.path.join(self.materials_dir, "data", filename)
