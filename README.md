@@ -37,7 +37,7 @@ Fig 1: S21 over angle of incindet. | Fig 2: S21 over frequency
 
 | Filepath  | Description |
 | ------------- | ------------- |
-| [gltF_extensioins](./gltF_extensioins) | Is a copy from [OpenMATERIAL](https://github.com/LudwigFriedmann/OpenMATERIAL) [glTF_extension](https://github.com/LudwigFriedmann/OpenMATERIAL/tree/master/glTF_extensions). This files are used for validating the output format. |
+| [glTF_extensions](./glTF_extensions) | Is a copy from [OpenMATERIAL](https://github.com/LudwigFriedmann/OpenMATERIAL) [glTF_extension](https://github.com/LudwigFriedmann/OpenMATERIAL/tree/master/glTF_extensions). These files are used for validating the output format. |
 | [materials](./materials) | OpenMATERIAL output folder structer with the generated material files. |
 | [rawdata](./rawdata) | Measured raw data ( s-Parameters and permittivity ) which serve as input for the [src](./src) code. |
 | [src](./src) | The Python code. |
