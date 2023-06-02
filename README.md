@@ -15,23 +15,27 @@ More information about the VIALDI project can be found on the [website](https://
 
 ## OpenMATERIAL
 
-OpenMATERIAL is a proposal that deals with how to exchange data for virtual validation and how to describe and structure this exchange. In the VIVALDI project, we had the same experience and therefore decided to use OpenMATERIAL. 
+OpenMATERIAL is a proposal that deals with how to exchange data for virtual validation and how to describe and structure this exchange. In the VIVALDI project, we had the same experience and therefore decided to use OpenMATERIAL.
 
 More information about the OpenMATERIAL project can be found on the [website](https://github.com/LudwigFriedmann/OpenMATERIAL).
+VIVALDI will follow the proposal of [OpenMATERIA](https://github.com/LudwigFriedmann/OpenMATERIAL) and with this the proposals for extensions to the [Khronos Group glTF 2.0](https://github.com/KhronosGroup/glTF) file format made in the [OpenMATERIAL](https://github.com/LudwigFriedmann/OpenMATERIAL) project.
 
 ## Measurement Campaign
 In VIVALDI there were several Mass campaigns. The results listed here include material measurements in the QoB. For this purpose, several samples were measured and their dielectric properties in the mmWave range were determined. 
 
 ### Measuring principle
-A device under test (DUT) is clamped on a receptacle. A horn antenna is placed orthogonally to the sample and transmitting, called Tx-antenna. A second antenna then measures the reflected energy at different angles of incidence, called an Rx antenna. This is how the scattering parameters are determined. In principle, this can be done in the same way for the transmission components.
+A device under test (DuT) is clamped on a receptacle. A horn antenna is placed orthogonally to the sample and transmitting, called Tx-antenna. A second antenna then measures the reflected energy at different angles of incidence, called an Rx antenna. This is how the scattering parameters are determined. In principle, this can be done in the same way for the transmission components.
 
 ### Measurements results
 The measurement results show the different reflection properties of the material over the frequency and the angle of incidence. Based on these measured s-parameters, the permittivity and permeability can later be determined. Where [Fig 1](#Fig-1) shows the $S21$ in $dB$ over the angle of incidence and [Fig 2](#Fig-2) shows the $S21$ in $dB$ over the frequenz. 
 
-![Fig-1](setup/s21_over_a.svg "Fig 1")      |  ![Fig2](setup/s21_over_f.svg "Fig-2")
+
+![Fig-1](setup/s21_over_a.svg "Fig-1")      |  ![Fig-2](setup/s21_over_f.svg "Fig-2")
 :-------------------------:|:-------------------------:
 Fig 1: S21 over angle of incindet. | Fig 2: S21 over frequency
 
+## Publications
+* [Dielectric Material Characterization of Traffic Objects in Automotive Radar Applications](https://ieeexplore.ieee.org/document/10133024)
 
 ## File Structure
 
@@ -40,5 +44,5 @@ Fig 1: S21 over angle of incindet. | Fig 2: S21 over frequency
 | [glTF_extensions](./glTF_extensions) | Is a copy from [OpenMATERIAL](https://github.com/LudwigFriedmann/OpenMATERIAL) [glTF_extension](https://github.com/LudwigFriedmann/OpenMATERIAL/tree/master/glTF_extensions). These files are used for validating the output format. |
 | [materials](./materials) | OpenMATERIAL output folder structer with the generated material files. |
 | [rawdata](./rawdata) | Measured raw data ( s-Parameters and permittivity ) which serve as input for the [src](./src) code. |
-| [src](./src) | The Python code. |
-| [setup](./rawdata) | Files needed to build the environment. |
+| [src](./src) | In the src folder you can find all the Python scripts needed to create the plots shown and to write the raw data in OpenMATERIAL format. |
+| [setup](./rawdata) | Here you can find the images as well as the [requirements.txt](./setup/requirments.txt) to create the virtual python environment. |

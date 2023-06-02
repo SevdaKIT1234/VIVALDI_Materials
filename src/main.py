@@ -99,7 +99,7 @@ class open_material_data_set(Template, RawData):
 
     def return_time(self):
         """Return programm start time as file genration time."""
-        self.startTime
+        return self.startTime
 
     def return_uuid(self, name):
         """ID uuid for material.
@@ -138,7 +138,9 @@ class open_material_data_set(Template, RawData):
         j_temp["asset"]["extensions"]["OpenMaterial_asset_info"]["asset_version"] = "1"
         j_temp["asset"]["extensions"]["OpenMaterial_asset_info"]["asset_variation"] = "1"
         j_temp["asset"]["extensions"]["OpenMaterial_asset_info"]["creator"] = self.return_creator()
-        j_temp["asset"]["extensions"]["OpenMaterial_asset_info"]["description"] = "common road surface asphalt"
+        j_temp["asset"]["extensions"]["OpenMaterial_asset_info"][
+            "description"
+        ] = f"material measurment for {name} with an quasi optical bench"
         j_temp["asset"]["extensions"]["OpenMaterial_asset_info"]["creation_date"] = self.return_time()
         # extensionsUsed
 
@@ -187,6 +189,9 @@ class open_material_data_set(Template, RawData):
         j_temp["asset"]["extensions"]["OpenMaterial_asset_info"]["title"] = " ".join(["Relative permittivity of", name])
         j_temp["asset"]["extensions"]["OpenMaterial_asset_info"]["asset_version"] = "1"
         j_temp["asset"]["extensions"]["OpenMaterial_asset_info"]["asset_variation"] = "1"
+        j_temp["asset"]["extensions"]["OpenMaterial_asset_info"][
+            "comment"
+        ] = f"permittivity {name} calculated from QoB measurments"
         j_temp["asset"]["extensions"]["OpenMaterial_asset_info"]["creator"] = self.return_creator()
         j_temp["asset"]["extensions"]["OpenMaterial_asset_info"]["description"] = " ".join(
             ["Relative permittivity of", name]

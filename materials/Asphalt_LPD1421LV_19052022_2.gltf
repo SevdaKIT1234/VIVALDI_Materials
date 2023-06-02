@@ -6,9 +6,9 @@
                 "asset_type": "material",
                 "asset_variation": "1",
                 "asset_version": "1",
-                "creation_date": null,
+                "creation_date": "2023.06.02 12:54:09",
                 "creator": "Karlsruhe Institute of Technology and Continental AG",
-                "description": "common road surface asphalt",
+                "description": "material measurment for Asphalt_LPD1421LV_19052022_2 with an quasi optical bench",
                 "id": "6d9ba7e4-555c-493a-bd82-47c7916d2d58",
                 "title": "material_Asphalt_LPD1421LV_19052022_2"
             }

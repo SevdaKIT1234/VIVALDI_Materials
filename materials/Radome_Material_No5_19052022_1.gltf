@@ -6,9 +6,9 @@
                 "asset_type": "material",
                 "asset_variation": "1",
                 "asset_version": "1",
-                "creation_date": null,
+                "creation_date": "2023.06.02 12:54:09",
                 "creator": "Karlsruhe Institute of Technology and Continental AG",
-                "description": "common road surface asphalt",
+                "description": "material measurment for Radome_Material_No5_19052022_1 with an quasi optical bench",
                 "id": "066794f3-975e-456c-9bc3-529197e95856",
                 "title": "material_Radome_Material_No5_19052022_1"
             }
