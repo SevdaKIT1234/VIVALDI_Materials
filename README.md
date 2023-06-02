@@ -1,9 +1,9 @@
-# VIVALDI Materials
+# ![Logo](setup/VIVALDI_Logo.svg "Logo")  VIVALDI Materials
 
 This git repository contains the measured raw data and the generated OpenMATERIAL files of the VIVALDI funded project. In addition, code is stored with which the raw data can be viewed and the OpenMATERIAL files can be generated.
 
 The repo contains extensive measurements in the mmWave range.
-In the quasi-optical bench, various materials were measured with a vector analyser and the scattering  parameters were recorded.
+In the quasi optical bench (QoB), various materials were measured with a vector analyser and the scattering  parameters were recorded.
 In addition, the complex permitivity $\epsilon_r$. 
 and permeability $\mu_r$ were calculated from the s-parameters, as these are the physical quantities that are most commonly used. As a small addition, only non-metallic or non-magnetic materials are used here, so the permeability can be assumed to be  $\mu_r = 1 \frac{H}{m}$ or $\mu_r = 1 - 0.00001j \frac{H}{m}$, which significantly simplifies the calculation of permittivity $\epsilon_r$.
 
@@ -20,13 +20,13 @@ OpenMATERIAL is a proposal that deals with how to exchange data for virtual vali
 More information about the OpenMATERIAL project can be found on the [website](https://github.com/LudwigFriedmann/OpenMATERIAL).
 
 ## Measurement Campaign
-In VIVALDI there were several Mass campaigns. The results listed here include material measurements in the quasi-optical bench. For this purpose, several samples were measured and their dielectric properties in the mmWave range were determined. 
+In VIVALDI there were several Mass campaigns. The results listed here include material measurements in the QoB. For this purpose, several samples were measured and their dielectric properties in the mmWave range were determined. 
 
 ### Measuring principle
 A device under test (DUT) is clamped on a receptacle. A horn antenna is placed orthogonally to the sample and transmitting, called Tx-antenna. A second antenna then measures the reflected energy at different angles of incidence, called an Rx antenna. This is how the scattering parameters are determined. In principle, this can be done in the same way for the transmission components.
 
 ### Measurements results
-The measurement results show the different reflection properties of the material over the frequency and the angle of incidence. Based on these measured s-parameters, the permittivity and permeability can later be determined. Where [Fig 1](#Fig-1) shows the $S21 in dB$ over the angle of incidence and [Fig 2](#Fig-2) shows the $S21 in dB$ over the frequenz. 
+The measurement results show the different reflection properties of the material over the frequency and the angle of incidence. Based on these measured s-parameters, the permittivity and permeability can later be determined. Where [Fig 1](#Fig-1) shows the $S21$ in $dB$ over the angle of incidence and [Fig 2](#Fig-2) shows the $S21$ in $dB$ over the frequenz. 
 
 ![Fig-1](setup/s21_over_a.svg "Fig 1")      |  ![Fig2](setup/s21_over_f.svg "Fig-2")
 :-------------------------:|:-------------------------:
@@ -37,6 +37,7 @@ Fig 1: S21 over angle of incindet. | Fig 2: S21 over frequency
 
 | Filepath  | Description |
 | ------------- | ------------- |
+| [gltF_extensioins](./gltF_extensioins) | Is a copy from [OpenMATERIAL](https://github.com/LudwigFriedmann/OpenMATERIAL) [glTF_extension](https://github.com/LudwigFriedmann/OpenMATERIAL/tree/master/glTF_extensions). This files are used for validating the output format. |
 | [materials](./materials) | OpenMATERIAL output folder structer with the generated material files. |
 | [rawdata](./rawdata) | Measured raw data ( s-Parameters and permittivity ) which serve as input for the [src](./src) code. |
 | [src](./src) | The Python code. |
