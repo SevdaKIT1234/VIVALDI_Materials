@@ -18,7 +18,7 @@ More information about the VIALDI project can be found on the [website](https://
 OpenMATERIAL is a proposal that deals with how to exchange data for virtual validation and how to describe and structure this exchange. In the VIVALDI project, we had the same experience and therefore decided to use OpenMATERIAL.
 
 More information about the OpenMATERIAL project can be found on the [website](https://github.com/LudwigFriedmann/OpenMATERIAL).
-VIVALDI will follow the proposal of [OpenMATERIA](https://github.com/LudwigFriedmann/OpenMATERIAL) and with this the proposals for extensions to the [Khronos Group glTF 2.0](https://github.com/KhronosGroup/glTF) file format made in the [OpenMATERIAL](https://github.com/LudwigFriedmann/OpenMATERIAL) project.
+VIVALDI will follow the proposal of [OpenMATERIAL](https://github.com/LudwigFriedmann/OpenMATERIAL) and with this the proposals for extensions to the [Khronos Group glTF 2.0](https://github.com/KhronosGroup/glTF) file format made in the [OpenMATERIAL](https://github.com/LudwigFriedmann/OpenMATERIAL) project.
 
 ## Measurement Campaign
 In VIVALDI there were several Mass campaigns. The results listed here include material measurements in the QoB. For this purpose, several samples were measured and their dielectric properties in the mmWave range were determined. 
