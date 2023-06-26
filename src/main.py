@@ -206,7 +206,7 @@ class open_material_data_set(Template, RawData):
 
         for index, row in j_mat.iterrows():
             j_temp["extensions"]["OpenMaterial_permittivity_data"]["data"][0]["real"].append(
-                [lightspeed / (row["!freq"] * 10e9), row["eps"]]
+                [lightspeed / (row["!freq"] * 1e9), row["eps"]]
             )  # wavelength,eps
 
         # data imag
